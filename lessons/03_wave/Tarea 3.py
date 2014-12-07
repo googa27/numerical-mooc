@@ -9,7 +9,7 @@ rcParams['font.size'] = 16
 
 
 
-nt = 6
+nt = 51
 nx = 81
 dx = .25
 dt = .0002   
@@ -122,7 +122,7 @@ def estado(u):
 
 u0 = u_initial()
 u = richtmyer(u0,nt,dt,dx)
-upreg = u[5,50]
+upreg = u[-1,50]
 
 
 print('-------------------------------------------------------')

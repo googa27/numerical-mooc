@@ -41,7 +41,7 @@ def f(u):
     v = u[1]
     mp = u[2]
     return numpy.array([v,
-                      -g + dmp*ve/(ms+mp) - rho*v*abs(v)*A*C_D/(2*ms+mp),
+                      -g + dmp*ve/(ms+mp) - rho*v*abs(v)*A*C_D/(2*(ms+mp)),
                       -dmp])
 
 def euler_step(u, f, dt):

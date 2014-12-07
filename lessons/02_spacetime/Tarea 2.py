@@ -11,8 +11,8 @@ L = 11.0
 dx = L/(nx-1)
 nt = 101    
 dt = .001
-vm = 80.
-rhom = 250.
+vm = 136.0
+rhom = 250.0
 
 ##initial conditions
 #u = numpy.ones(nx)      
@@ -25,7 +25,7 @@ rhom = 250.
 #plt.show()
 
 x = numpy.linspace(0,L,nx)
-rho0 = numpy.ones(nx)*10
+rho0 = numpy.ones(nx)*20
 rho0[10:20] = 50
 
 plt.plot(x, rho0, color='#003366', ls='--', lw=3)
@@ -42,19 +42,31 @@ def v(rho):
 
 def F(rho):
     return rho*v(rho)
+def dF(rho):
+    return vm*(1-2*rho/rhom)
+
+#for n in range(1, nt):  
+    #rhon = rho.copy() 
+    #rho[1:] = rhon[1:]-dt/dx*(F(rhon[1:])-F(rhon[0:-1])) 
+    #rho[0] = 10.0
+    #u[n]=rho
 
 for n in range(1, nt):  
     rhon = rho.copy() 
-    rho[1:] = rhon[1:]-dt/dx*(F(rhon[1:])-F(rhon[0:-1])) 
-    rho[0] = 10.0
+    rho[1:] = rhon[1:]-dF(rho)[1:]*dt/dx*(rhon[1:]-rhon[0:-1]) 
+    rho[0] = 20.0
     u[n]=rho
 
 plt.plot(x, u[100], color='#003366', ls='--', lw=3)
 plt.ylim(0,90)
 plt.show()
 
-print(min(v(u[0])))
+#I calculate what is asked for taking into account the required unit changes
 
-print(numpy.average(v(u[50])))
+print(min(v(u[0])*10.0**3/60.0**2))
 
-print(min(v(u[100])))
+print(numpy.average(v(u[50])*10.0**3/60.0**2))
+
+print(min(v(u[100])*10.0**3/60.0**2))
+
+print(min(v(u[50])*10.0**3/60.0**2))

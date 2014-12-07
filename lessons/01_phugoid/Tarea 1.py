@@ -1,15 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-T=20.0
+T=40.0
 dt=0.1
 N=int(T/dt+1)
 
-ms=50
+ms=50.0
 g=9.81
 ro=1.091
 A=np.pi*0.5**2
-ve=325
+ve=325.0
 Cd=0.15
 
 
@@ -30,8 +30,8 @@ def fmp(t):
 def f(u):
     h = u[0]
     v = u[1]
-    print(mp,dmp,ro*v*abs(v)*A*Cd/2,h)
-    return np.array([v,-g+dmp*ve/(ms+mp)-ro*v*abs(v)*A*Cd/2])
+    print(mp,dmp,h)
+    return np.array([v,-g+dmp*ve/(ms+mp)-ro*v*abs(v)*A*Cd/(2*(ms+mp))])
 
 def euler_step(u,f,dt):
     return u+dt*f(u)
@@ -52,7 +52,7 @@ for i in range(1,N):
 h = u[:,0]
 v = u[:,1]
 
-plt.plot(t,h)
+plt.plot(t,h,'r--',t,v,'b--')
 plt.show()
 
 for i,j in enumerate(v):
