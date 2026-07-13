@@ -1,3 +1,23 @@
+## Project #24 Preservation notice
+
+Status: Fork / Education (`legacy` profile, Advisory enforcement). This repository is preserved for historical/reference value and is not presented as maintained, production-ready, secure, or suitable for new operational use.
+
+Supersession: prefer the canonical upstream or maintained libraries for new work. Canonical/provenance note: upstream educational course fork; upstream course material remains canonical. Upstream: https://github.com/numerical-mooc/numerical-mooc.git
+
+License/provenance: Root LICENSE is MIT; preserve copyright and attribution from upstream course authors.
+
+Security/private-data warning: Notebooks are executable code; run only in isolated environments after inspecting cells and dependencies. Do not add student records, grades, private forum exports, or restricted course data.
+
+Revival gates:
+- Sync/reconcile with upstream numerical-mooc before changing lessons.
+- Pin a teaching environment and verify representative notebooks deterministically.
+- Audit third-party media/data asset licenses before redistribution or remix.
+- Keep pedagogical code clearly separated from any production numerical library claim.
+
+See `AGENTS.md` and `docs/ARCHITECTURE.yaml` for the advisory preservation contract.
+
+---
+
 #Practical Numerical Methods with Python
 
 A multi-campus, connected course (plus MOOC) on numerical methods for differential equations in science and engineering. Collaboratively developed by:
