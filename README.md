@@ -16,6 +16,15 @@ Revival gates:
 
 See `AGENTS.md` and `docs/ARCHITECTURE.yaml` for the advisory preservation contract.
 
+### Historical branch material
+
+The default branch retains the original [boundary-element draft](https://github.com/googa27/numerical-mooc/tree/cab271f8ef6f6392e2a2bb140a70db9e97fdb672/lessons/06_boundary)
+and [coursework snapshot](https://github.com/googa27/numerical-mooc/tree/51f2c48ce84ab12bdc82c3bf409485a984f1bbb8)
+in its commit history. The boundary notebook is an incomplete derivation. The coursework
+snapshot includes legacy assignments and a bundled animation dependency. These
+snapshots are reference material under the revival gates above.
+
+
 ---
 
 #Practical Numerical Methods with Python
